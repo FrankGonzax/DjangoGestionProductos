@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/indexstyle.css' %}">
+    </head>
+    <body>
+        <script src="{% static 'js/indexscript.js' %}"></script>
+        <div class="divs" id="admin">
+            <div class="div1">
+                <h1 class="div1_h1">Administración</h1>
+            </div>
+            <div class="div2">
+                <button class="b" onclick="abrirCategoria()">Registrar Categoría</button>
+            </div>
+            <div class="div2">
+                <button class="b" onclick="abrirProducto()">Registrar Producto</button>
+            </div>
+            <div class="div3">
+                <a href="{% url "productos:viewProductos" %}">
+                    <button class="b">Ver Productos</button>
+                </a>
+            </div>
+        </div>
+        <div class="divi" id="producto">
+            <div class="divi_1">
+                <h1>Ingresar Producto</h1>
+            </div>
+            <div>
+                <label class="label">Nombre:</label>
+            </div>
+            <div>
+                <input type="text" class="input" id="nombreproducto">
+            </div>
+            <div>
+                <label class="label">Categoría:</label>
+            </div>
+            <div>
+                <label class="label" id="labelcat"></label>
+                <select id="opciones" name="opciones" class="input">
+                </select>
+            </div>
+            <div>
+                <label class="label">Stock:</label>
+            </div>
+            <div>
+                <input type="number" class="input" id="stockproducto">
+            </div>
+            <div>
+                <label class="label">Descripción:</label>
+            </div>
+            <div>
+                <input type="text" class="input" id="descripcionproducto">
+            </div>
+            <div class="divi_u">
+                <button class="divi_b1" onclick="registrarProducto()">Registrar</button>
+                <button class="divi_b2" onclick="cancelar()">Cancelar</button>
+            </div>
+        </div>
+        <div class="divi2" id="categoria">
+            <div class="divi_1">
+                <h1>Ingresar Categoría</h1>
+            </div>
+            <div>
+                <label class="label">Nombre:</label>
+            </div>
+            <div>
+                <input type="text" class="input" id="nombrecategoria">
+            </div>
+            <div class="divi_u">
+                <button class="divi_b1" onclick="registrarCategoria()">Registrar</button>
+                <button class="divi_b2" onclick="cancelar()">Cancelar</button>
+            </div>
+        </div>
+    </body>
+</html>
